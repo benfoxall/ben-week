@@ -4,10 +4,12 @@ var awspublish = require('gulp-awspublish');
 var smoosher = require('gulp-smoosher');
 var minifyInline = require('gulp-minify-inline');
 var minifyHTML = require('gulp-minify-html');
+var htmlAutoprefixer = require( "gulp-html-autoprefixer" );
 
 gulp.task('build', function(){
   return gulp.src('src/index.html')
           .pipe(smoosher())
+          .pipe(htmlAutoprefixer())
           .pipe(minifyInline())
           .pipe(minifyHTML())
           .pipe(gulp.dest('dist'));
