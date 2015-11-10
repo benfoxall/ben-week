@@ -8,11 +8,13 @@
   },
   "author": "BEN",
   "license": "MIT",
-  "dependencies": {
-    "gulp": "^3.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "dotenv": "^1.2.0",
-    "gulp-awspublish": "^3.0.1"
+    "gulp": "^3.9.0",
+    "gulp-awspublish": "^3.0.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-minify-inline": "^0.1.1",
+    "gulp-smoosher": "0.0.8",
   }
 }

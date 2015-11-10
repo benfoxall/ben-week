@@ -1,8 +1,19 @@
-require('dotenv');
+require('dotenv').load();
 var gulp = require('gulp');
 var awspublish = require('gulp-awspublish');
+var smoosher = require('gulp-smoosher');
+var minifyInline = require('gulp-minify-inline');
+var minifyHTML = require('gulp-minify-html');
 
-gulp.task('publish', function() {
+gulp.task('build', function(){
+  return gulp.src('src/index.html')
+          .pipe(smoosher())
+          .pipe(minifyInline())
+          .pipe(minifyHTML())
+          .pipe(gulp.dest('dist'));
+})
+
+gulp.task('publish', ['build'], function() {
 
   var publisher = awspublish.create({
     params: {
@@ -13,23 +24,7 @@ gulp.task('publish', function() {
     secretAccessKey: process.env.AWS_SECRET
   });
 
-  // define custom headers
-  var headers = {
-    // 'Cache-Control': 'max-age=315360000, no-transform, public'
-    // ...
-  };
-
-  return gulp.src('./src/*')
-     // gzip, Set Content-Encoding headers and add .gz extension
-    // .pipe(awspublish.gzip({ ext: '.gz' }))
-
-    // publisher will add Content-Length, Content-Type and headers specified above
-    // If not specified it will set x-amz-acl to public-read by default
-    .pipe(publisher.publish(headers))
-
-    // create a cache file to speed up consecutive uploads
-    // .pipe(publisher.cache())
-
-     // print upload updates to console
+  return gulp.src('./dist/*')
+    .pipe(publisher.publish())
     .pipe(awspublish.reporter());
 });
