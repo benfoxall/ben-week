@@ -1,0 +1,18 @@
+{
+  "name": "ben-week",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BEN",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "dotenv": "^1.2.0",
+    "gulp-awspublish": "^3.0.1"
+  }
+}
