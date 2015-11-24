@@ -30,3 +30,5 @@ gulp.task('publish', ['build'], function() {
     .pipe(publisher.publish())
     .pipe(awspublish.reporter());
 });
+
+gulp.task('default', ['publish']);
