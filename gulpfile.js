@@ -15,7 +15,12 @@ gulp.task('build', function(){
           .pipe(gulp.dest('dist'));
 })
 
-gulp.task('publish', ['build'], function() {
+gulp.task('other-things', function(){
+  return gulp.src(['src/logo.png', 'brand1.jpg', 'brand2.png', 'brand3.png', 'brand4.png'])
+    .pipe(gulp.dest('dist'))
+})
+
+gulp.task('publish', ['build', 'other-things'], function() {
 
   var publisher = awspublish.create({
     params: {

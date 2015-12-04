@@ -10,26 +10,16 @@ body {
 
 #logo {
   position: fixed;
-  right: 10px;
-  top: -5px;
-  width: 4em;
-  background: #009CFF;
-  text-align: center;
-  height: 4em;
-  vertical-align: middle;
-  text-shadow: none;
-  border-radius: 100%;
-  transform: rotate(13deg);
+  width: 200px;
+  height: 200px;
+  right: 0;
+  transform: translate(124px, -40px) rotate(32deg);
   transition: all .2s;
-  box-shadow: 5px 3px 2px rgba(0,0,0,0.1);
-  text-transform: uppercase;
   cursor: none;
 }
 
 #logo:hover {
-  transform: rotate(-13deg) scale(1.7);
-  background: #f08;
-  color:#fff;
+  transform: rotate(-18deg) scale(1.7);
 }
 
 #logo span {
@@ -41,25 +31,108 @@ body {
 
 
 #stuff {
-  max-width:50em;
-  margin:auto;
+  max-width:40em;
   padding: 1em;
+  margin-left:2em
 }
 
 header {
   margin:0;
-  background: #000
-;
+  background: #000;
   text-align: center;
   padding: 1em;
 }
 
 
 h2 {
-  margin-top:3em;
+  margin-top: 2em;
+  font-size: 4em;
 }
-
 
 iframe {
   max-width: 100%;
+}
+
+.woooo {
+  animation: hue-rotate 1s linear infinite;
+}
+
+@keyframes hue-rotate {
+    from { filter: hue-rotate(0deg)    }
+    to   { filter: hue-rotate(360deg) }
+}
+
+.R{ color: #007EFF;}
+.A{ color: #00DC8B;}
+.I{ color: #004EFF;}
+.N{ color: #FF008D;}
+.B{ color: #007EFF;}
+.O{ color: #771919;}
+.W{ color: #6D84F5;}
+.S{ color: #00FFAD;}
+.U{ color: #62FF00;}
+.L{ color: #FF8D00;}
+.E{ color: #00A1FF;}
+.K{ color: #FF00E0;}
+
+
+h1 {
+    font-size: 4em;
+}
+
+.yes {
+    text-decoration: underline;
+}
+
+
+h3 {
+    color: black;
+    margin-left: 1em;
+    font-size: 2.5em;
+    transition: font-size .75s;
+}
+
+h3 em {
+    color: #000000;
+    font-size: .5em;
+    display: block;
+    font-weight: lighter;
+}
+
+h4 {
+  font-size:2em;
+}
+
+.thing {
+ margin-left: 80px;
+ transition: all .5s;
+
+
+ /* text-align: center; */;
+ border-left: 2px solid #131313;
+ padding-left: 1em;
+}
+
+.campaign {
+  list-style: none;
+  padding: 0
+}
+
+.campaign img {
+  max-width: 100%;
+  margin:3em 0;
+}
+
+
+@media (max-width: 450px) {
+  h3 {
+    font-size:4em;
+    margin-left: 0em;
+  }
+}
+@media (max-width: 500px) {
+  .thing {
+    margin-left: 0;
+    font-size:80%
+  }
 }
