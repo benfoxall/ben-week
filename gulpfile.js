@@ -16,7 +16,7 @@ gulp.task('build', function(){
 })
 
 gulp.task('other-things', function(){
-  return gulp.src(['src/logo.png', 'brand1.jpg', 'brand2.png', 'brand3.png', 'brand4.png'])
+  return gulp.src(['src/logo.png', 'src/brand1.jpg', 'src/brand2.png', 'src/brand3.png', 'src/brand4.png'])
     .pipe(gulp.dest('dist'))
 })
 
